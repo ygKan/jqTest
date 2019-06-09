@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>.val() 处理表单元素的值</title>
+    <style>
+    p {
+        width:100px;
+        height:80px;
+        border:1px solid blue;
+        color: red;
+        font-size:22px;
+        padding:2px;
+        margin: 4px;
+    }
+    
+   
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <h3>.val()</h3>
+    
+    <select id="single">
+        <option>四月是你的谎言</option>
+        <option>秒速五厘米</option>
+    </select>
+    <select id="multiple" multiple="multiple">
+        <option selected="selected">五月雨</option>
+        <option>六月风</option>
+        <option selected="selected">七月人</option>
+    </select>
+    <input type="text" value="click a button" />
+    <!-- 创建标签来接收返回的文本 -->
+    <p ></p> 
+    <p ></p>
+
+    <script type="text/javascript">
+        //单个select，返回第一个
+        $("p:first").text( $("#single").val() )
+    </script>
+
+    <script type="text/javascript">
+        //多个select被选择，返回["五月雨", "七月人"]
+        $("p:last").text( $("#multiple").val() ) 
+    </script>
+
+
+    <script type="text/javascript">
+        //选择一个表单，修改value的值
+        $("input[type='text']").val('修改表单的字段') 
+    </script>
+</body>
+</html>
